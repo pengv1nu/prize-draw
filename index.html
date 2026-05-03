@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PrizeDraw - Система розыгрыша призов</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <h1>🎁 PrizeDraw</h1>
+        <p>Система розыгрыша призов</p>
+    </header>
+
+    <nav class="tabs">
+        <button class="tab-btn active" data-tab="participants">Участники</button>
+        <button class="tab-btn" data-tab="prizes">Призы</button>
+        <button class="tab-btn" data-tab="draw">Провести розыгрыш</button>
+        <button class="tab-btn" data-tab="history">История</button>
+    </nav>
+
+    <main>
+
+        <section id="participants" class="tab-content active">
+            <h2>Участники</h2>
+            <div class="controls">
+                <input type="text" id="search" placeholder="Поиск по имени...">
+                <button id="add-participant-btn">+ Добавить участника</button>
+            </div>
+            <table id="participants-table">
+                <thead>
+                    <tr>
+                        <th>Имя</th>
+                        <th>Email</th>
+                        <th>Телефон</th>
+                        <th>Группа</th>
+                        <th>Действия</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </section>
+
+        <section id="prizes" class="tab-content">
+            <h2>Призы</h2>
+            <button id="add-prize-btn">+ Добавить приз</button>
+            <div id="prizes-list" class="cards"></div>
+        </section>
+
+        <section id="draw" class="tab-content">
+            <h2>Провести розыгрыш</h2>
+            <div class="draw-panel">
+                <select id="prize-select">
+                    <option value="">Выберите приз</option>
+                </select>
+                <input type="number" id="winners-count" value="1" min="1" max="10">
+                <button id="start-draw-btn">🎲 Начать розыгрыш</button>
+            </div>
+            <div id="draw-result" class="draw-result"></div>
+        </section>
+
+        <section id="history" class="tab-content">
+            <h2>История розыгрышей</h2>
+            <div id="history-list"></div>
+        </section>
+    </main>
+
+    <script src="js/storage.js"></script>
+    <script src="js/utils.js"></script>
+    <script src="js/participants.js"></script>
+    <script src="js/prizes.js"></script>
+    <script src="js/draw.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
